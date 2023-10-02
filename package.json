@@ -3,12 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prepare": "panda codegen",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:migrate": "prisma migrate dev",
+    "db:migrate:reset": "prisma migrate reset",
+    "db:seed": "prisma db seed",
+    "db:studio": "prisma studio"
   },
   "dependencies": {
+    "@prisma/client": "^5.3.1",
     "@types/node": "20.6.2",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
@@ -17,6 +23,15 @@
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.46.1",
+    "swr": "^2.2.2",
     "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "^0.15.0",
+    "prisma": "^5.3.1"
+  },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma"
   }
 }
